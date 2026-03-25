@@ -60,10 +60,10 @@
 <header>
     <h1>Learnix</h1>
     <p>Empowering learning through technology.</p>
-    <button class="btn" onclick="alert('Thanks for visiting!')">Explore</button>
+    <button class="btn" onclick="scrollToSection()">Explore</button>
 </header>
 
-<div class="section">
+<div class="section" id="main-content">
     <div class="card">
         <h2>About Me</h2>
         <p>I am dedicated to leveraging technology to enhance learning and make knowledge more accessible, practical, and impactful in today’s digital world.</p>
@@ -88,6 +88,13 @@
 <footer>
     <p>© 2026  ASUTOSH PADHI</p>
 </footer>
+    <script>
+function scrollToSection() {
+    document.getElementById("main-content").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
 
 </body>
 </html>
