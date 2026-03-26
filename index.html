@@ -1,241 +1,227 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cognix - EdTech Platform</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cognix</title>
 
-    <!-- FAVICON -->
-    <link rel="icon" href="cognix.png">
+<link rel="icon" href="cognix.png">
 
-    <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRPFWW8SX"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HLRPFWW8SX');
-    </script>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b1220;
+    color: white;
+}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: linear-gradient(135deg,#0f172a,#1e3a8a);
-            color: white;
-            transition: 0.3s;
-        }
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
 
-        .dark-mode {
-            background: #020617;
-        }
+nav h2 {
+    font-weight: 600;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 15px;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-        }
+nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+}
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-        }
+.hero-text {
+    max-width: 500px;
+}
 
-        .logo {
-            width: 120px;
-            margin-bottom: 20px;
-        }
+.hero-text h1 {
+    font-size: 60px;
+    line-height: 1.1;
+}
 
-        h1 {
-            font-size: 48px;
-            margin: 10px 0;
-        }
+.hero-text p {
+    color: #aaa;
+    margin: 20px 0;
+}
 
-        .tagline {
-            color: #cbd5f5;
-            margin-bottom: 25px;
-        }
+.btn {
+    padding: 12px 25px;
+    background: #fbbf24;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-        .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
-            background: linear-gradient(135deg,#38bdf8,#6366f1);
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+.hero-img img {
+    width: 500px;
+    transform: rotate(-5deg);
+}
 
-        .btn:hover {
-            transform: scale(1.1);
-        }
+/* SECTION */
+.section {
+    padding: 60px 50px;
+}
 
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
 
-        .search {
-            padding: 10px;
-            width: 260px;
-            border-radius: 8px;
-            border: none;
-            margin-bottom: 20px;
-        }
+.card {
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
 
-        .pdf-box {
-            background: rgba(255,255,255,0.08);
-            padding: 15px;
-            margin: 10px auto;
-            width: 260px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
+.card:hover {
+    transform: translateY(-8px);
+}
 
-        .pdf-box:hover {
-            transform: scale(1.05);
-            background: rgba(255,255,255,0.15);
-        }
+/* FEATURES GRID */
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
 
-        .pdf-box a {
-            color: white;
-            text-decoration: none;
-        }
+.feature-card {
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+}
 
-        .new {
-            color: #38bdf8;
-            font-size: 12px;
-            margin-left: 5px;
-        }
+.feature-card img {
+    width: 80px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.4);
-        }
+/* FOOTER */
+footer {
+    background: #111827;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
 
-        footer a {
-            color: #38bdf8;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-    </style>
+footer div {
+    color: #aaa;
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-    <a href="#">Home</a>
-    <a href="#resources">Resources</a>
-    <a href="#contact">Contact</a>
+    <h2>✨ Cognix</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </div>
 </nav>
 
-<header>
+<!-- HERO -->
+<section class="hero">
 
-    <img src="cognix.png" class="logo">
+<div class="hero-text">
+    <h1>Unlock the Power of Knowledge</h1>
+    <p>Revolutionize your learning journey with premium EdTech experience.</p>
+    <button class="btn">Explore Now</button>
+</div>
 
-    <h1>Cognix</h1>
-    <p class="tagline">Intelligent Learning Powered by Technology</p>
+<div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1581090700227-1e8d9b0a7d7c">
+</div>
 
-    <button class="btn" onclick="scrollToSection()">Explore</button>
-    <button class="btn" onclick="toggleDarkMode()">🌙 Dark</button>
+</section>
 
-</header>
+<!-- SECOND SECTION -->
+<section class="section">
 
-<div class="section" id="main-content">
+<div class="grid">
 
-    <!-- SEARCH -->
-    <input type="text" class="search" placeholder="Search notes..." onkeyup="searchPDF(this.value)">
+<div>
+    <h2>Let's Go</h2>
+    <p>Embrace the future of education with smart tools and interactive learning.</p>
+</div>
 
-    <!-- SUBJECTS -->
-
-    <h2>📘 English</h2>
-
-    <div class="pdf-box">
-        <a href="root-word.pdf" target="_blank" onclick="trackPDF('Root Words')">
-        📄 Root Words <span class="new">NEW</span>
-        </a>
-    </div>
-
-    <div class="pdf-box">
-        <a href="confuse-word-updated.pdf" target="_blank" onclick="trackPDF('Confusing Words')">
-        📄 Confusing Words
-        </a>
-    </div>
-
-    <h2>📗 General Studies</h2>
-
-    <div class="pdf-box">
-        <a href="gs-notes.pdf" target="_blank" onclick="trackPDF('GS Notes')">
-        📄 GS Notes
-        </a>
-    </div>
-
-    <h2>📙 Mathematics</h2>
-
-    <div class="pdf-box">
-        <a href="math-notes.pdf" target="_blank" onclick="trackPDF('Math Notes')">
-        📄 Math Notes
-        </a>
-    </div>
+<div class="card">
+    <h2>Smart Learning</h2>
+    <p>Advanced analytics and intuitive platform.</p>
+</div>
 
 </div>
 
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+
+<h2 style="text-align:center;">Elevate Your Learning</h2>
+
+<div class="features">
+
+<div class="feature-card">
+    <h3>Explore More</h3>
+    <p>Cutting-edge learning tools</p>
+</div>
+
+<div class="feature-card">
+    <h3>Learn More</h3>
+    <p>Smart educational platform</p>
+</div>
+
+<div class="feature-card">
+    <h3>Unlock Potential</h3>
+    <p>Maximize your skills</p>
+</div>
+
+<div class="feature-card">
+    <h3>Grow Faster</h3>
+    <p>Accelerate your journey</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
 
-    <p>© 2026 ASUTOSH PADHI | Cognix</p>
+<div>
+    <h3>✨ Cognix</h3>
+    <p>© 2026</p>
+</div>
 
-    <p>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://github.com" target="_blank">GitHub</a>
-    </p>
+<div>
+    <p>Home</p>
+    <p>About</p>
+</div>
 
-    <p>
-        <a href="mailto:asutoshpadhi7475@gmail.com">Email Me</a>
-    </p>
+<div>
+    <p>Resources</p>
+    <p>FAQ</p>
+</div>
+
+<div>
+    <p>Connect</p>
+    <p>LinkedIn</p>
+</div>
 
 </footer>
-
-<script>
-
-function scrollToSection() {
-    document.getElementById("main-content").scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-}
-
-function searchPDF(value) {
-    let boxes = document.querySelectorAll(".pdf-box");
-    value = value.toLowerCase();
-
-    boxes.forEach(box => {
-        let text = box.innerText.toLowerCase();
-        box.style.display = text.includes(value) ? "block" : "none";
-    });
-}
-
-/* 🔥 TRACK PDF CLICKS */
-function trackPDF(name) {
-    gtag('event', 'pdf_download', {
-        'event_category': 'engagement',
-        'event_label': name
-    });
-}
-
-</script>
 
 </body>
 </html>
