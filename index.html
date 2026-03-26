@@ -2,9 +2,18 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cognix</title>
+<title>Cognix - Premium EdTech</title>
 
 <link rel="icon" href="cognix.png">
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRPFWW8SX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HLRPFWW8SX');
+</script>
 
 <style>
 body {
@@ -14,16 +23,11 @@ body {
     color: white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    align-items: center;
-}
-
-nav h2 {
-    font-weight: 600;
 }
 
 nav a {
@@ -40,44 +44,33 @@ nav a {
     padding: 80px 50px;
 }
 
-.hero-text {
-    max-width: 500px;
-}
-
 .hero-text h1 {
-    font-size: 60px;
-    line-height: 1.1;
-}
-
-.hero-text p {
-    color: #aaa;
-    margin: 20px 0;
+    font-size: 55px;
 }
 
 .btn {
     padding: 12px 25px;
-    background: #fbbf24;
+    background: linear-gradient(135deg,#38bdf8,#6366f1);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    color: white;
     cursor: pointer;
-}
-
-.hero-img img {
-    width: 500px;
-    transform: rotate(-5deg);
 }
 
 /* SECTION */
 .section {
-    padding: 60px 50px;
+    padding: 60px 40px;
+    text-align: center;
 }
 
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
 }
 
+/* CARD */
 .card {
     background: #111827;
     padding: 25px;
@@ -89,33 +82,25 @@ nav a {
     transform: translateY(-8px);
 }
 
-/* FEATURES GRID */
-.features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.feature-card {
+/* PDF */
+.pdf-box {
     background: #111827;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-.feature-card img {
-    width: 80px;
+.pdf-box a {
+    color: white;
+    text-decoration: none;
 }
 
 /* FOOTER */
 footer {
     background: #111827;
     padding: 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-footer div {
-    color: #aaa;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
 }
 </style>
 </head>
@@ -127,71 +112,94 @@ footer div {
     <h2>✨ Cognix</h2>
     <div>
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+        <a href="#study">Study</a>
+        <a href="#store">Store</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 
-<div class="hero-text">
+<div>
     <h1>Unlock the Power of Knowledge</h1>
-    <p>Revolutionize your learning journey with premium EdTech experience.</p>
-    <button class="btn">Explore Now</button>
+    <p>Premium EdTech platform for smart learning.</p>
+    <button class="btn" onclick="scrollToSection()">Explore</button>
 </div>
 
-<div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e8d9b0a7d7c">
-</div>
+<img src="cognix.png" style="width:350px; transform:rotate(-5deg);">
 
 </section>
 
-<!-- SECOND SECTION -->
+<!-- FEATURES (SAAS STYLE) -->
 <section class="section">
+
+<h2>🚀 Why Cognix?</h2>
 
 <div class="grid">
 
-<div>
-    <h2>Let's Go</h2>
-    <p>Embrace the future of education with smart tools and interactive learning.</p>
+<div class="card">📘 Smart Learning System</div>
+<div class="card">📊 Analytics Based Growth</div>
+<div class="card">⚡ Fast Resources Access</div>
+<div class="card">🤖 AI Integration Ready</div>
+
+</div>
+
+</section>
+
+<!-- STUDY SECTION -->
+<section class="section" id="study">
+
+<h2>📚 Study Sections</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>English</h3>
+
+<div class="pdf-box">
+<a href="root-word.pdf" target="_blank">📄 Root Words</a>
+</div>
+
+<div class="pdf-box">
+<a href="confuse-word-updated.pdf" target="_blank">📄 Confusing Words</a>
+</div>
+
 </div>
 
 <div class="card">
-    <h2>Smart Learning</h2>
-    <p>Advanced analytics and intuitive platform.</p>
+<h3>General Studies</h3>
+
+<div class="pdf-box">
+<a href="gs-notes.pdf" target="_blank">📄 GS Notes</a>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Mathematics</h3>
+
+<div class="pdf-box">
+<a href="math-notes.pdf" target="_blank">📄 Math Notes</a>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- FEATURES -->
-<section class="section">
+<!-- AFFILIATE STORE -->
+<section class="section" id="store">
 
-<h2 style="text-align:center;">Elevate Your Learning</h2>
+<h2>🛒 Recommended Resources</h2>
 
-<div class="features">
+<div class="grid">
 
-<div class="feature-card">
-    <h3>Explore More</h3>
-    <p>Cutting-edge learning tools</p>
-</div>
-
-<div class="feature-card">
-    <h3>Learn More</h3>
-    <p>Smart educational platform</p>
-</div>
-
-<div class="feature-card">
-    <h3>Unlock Potential</h3>
-    <p>Maximize your skills</p>
-</div>
-
-<div class="feature-card">
-    <h3>Grow Faster</h3>
-    <p>Accelerate your journey</p>
+<div class="card">
+<h3>📚 Best Books & Tools</h3>
+<p>Explore curated resources for learning.</p>
+<a href="https://linktr.ee/asutoshpadhi" target="_blank" class="btn">Visit Store</a>
 </div>
 
 </div>
@@ -199,29 +207,40 @@ footer div {
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
 
 <div>
-    <h3>✨ Cognix</h3>
-    <p>© 2026</p>
+<h3>Cognix</h3>
+<p>Premium EdTech Platform</p>
 </div>
 
 <div>
-    <p>Home</p>
-    <p>About</p>
+<p>Home</p>
+<p>Study</p>
+<p>Store</p>
 </div>
 
 <div>
-    <p>Resources</p>
-    <p>FAQ</p>
+<p>Resources</p>
+<p>PDF Notes</p>
+<p>Tools</p>
 </div>
 
 <div>
-    <p>Connect</p>
-    <p>LinkedIn</p>
+<p>Connect</p>
+<a href="https://linkedin.com">LinkedIn</a><br>
+<a href="https://github.com">GitHub</a>
 </div>
 
 </footer>
+
+<script>
+function scrollToSection() {
+    document.getElementById("study").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
 
 </body>
 </html>
