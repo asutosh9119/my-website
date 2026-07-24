@@ -97,12 +97,12 @@ window.addEventListener("load", () => {
     const bootSubtext = document.getElementById("boot-subtext");
     const bootProgress = document.getElementById("boot-progress");
 
-    const messages = [
-        "DISCIPLINE.",
-        "CONSISTENCY.",
-        "EXECUTION.",
-        "SUCCESS."
-    ];
+   const messages = [
+    "THE WORLD IS MOVING.",
+    "SO SHOULD YOU.",
+    "DON'T WATCH SUCCESS.",
+    "BECOME SUCCESS."
+];
 
     let progress = 0;
     let messageIndex = 0;
@@ -147,9 +147,7 @@ window.addEventListener("load", () => {
 
             else {
 
-                bootSubtext.textContent =
-                "Preparing Your Future...";
-
+               bootSubtext.textContent = "Your journey begins now...";
                 setTimeout(() => {
 
                     bootScreen.style.opacity = "0";
