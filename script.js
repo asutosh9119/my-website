@@ -62,3 +62,64 @@ observer.observe(el);
 });
 
 console.log("✅ Cognix Loaded Successfully");
+
+
+
+// ===========================
+// Motivation Popup
+// ===========================
+
+const popup = document.getElementById("motivation-popup");
+const getStarted = document.querySelector('a[href="#subjects"].btn');
+const enterBtn = document.getElementById("enter-btn");
+const typingText = document.getElementById("typing-text");
+
+const message = "Dreams don't change lives. Daily discipline does.";
+
+let i = 0;
+
+function typeWriter() {
+
+typingText.innerHTML = "";
+
+i = 0;
+
+function typing() {
+
+if (i < message.length) {
+
+typingText.innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(typing, 40);
+
+}
+
+}
+
+typing();
+
+}
+
+getStarted.addEventListener("click", function(e){
+
+e.preventDefault();
+
+popup.style.display = "flex";
+
+typeWriter();
+
+});
+
+enterBtn.addEventListener("click", function(){
+
+popup.style.display = "none";
+
+document.getElementById("subjects").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
