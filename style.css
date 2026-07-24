@@ -497,6 +497,34 @@ animation:logoFloat 2.5s ease-in-out infinite;
 filter:drop-shadow(0 0 30px rgba(56,189,248,.5));
 }
 
+#boot-progress{
+
+margin-top:20px;
+
+font-size:34px;
+
+font-weight:700;
+
+color:#38bdf8;
+
+letter-spacing:3px;
+
+text-shadow:0 0 25px rgba(56,189,248,.7);
+
+transition:.3s;
+
+}
+
+.loader-fill{
+
+width:100%;
+
+height:100%;
+
+border-radius:50%;
+
+}
+
 .loader-ring{
 width:90px;
 height:90px;
