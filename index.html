@@ -5,7 +5,7 @@
 <title>Cognix - Premium EdTech</title>
 
 <link rel="icon" href="cognix.png">
-
+<link rel="stylesheet" href="style.css">
 <!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRPFWW8SX"></script>
 <script>
@@ -14,173 +14,78 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-HLRPFWW8SX');
 </script>
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b1220;
-    color: white;
-}
-
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-}
-
-nav a {
-    color: #ccc;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-/* HERO */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 50px;
-}
-
-.hero-text h1 {
-    font-size: 55px;
-}
-
-.btn {
-    padding: 12px 25px;
-    background: linear-gradient(135deg,#38bdf8,#6366f1);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-}
-
-/* SECTION */
-.section {
-    padding: 60px 40px;
-    text-align: center;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
-}
-
-/* CARD */
-.card {
-    background: #111827;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-/* PDF */
-.pdf-box {
-    background: #111827;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.pdf-box a {
-    color: white;
-    text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-    background: #111827;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-}
-</style>
 </head>
 
 <body>
-
-<!-- NAV -->
 <nav>
-    <h2>✨ Cognix</h2>
-    <div>
-        <a href="#">Home</a>
-        <a href="#study">Study</a>
-        <a href="#store">Store</a>
-        <a href="#contact">Contact</a>
-    </div>
+
+<div class="logo">
+    Cognix
+</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#study">Study</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#store">Store</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="#study" class="btn">Get Started</a>
+
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 
-<div>
-    <h1>Unlock the Power of Knowledge</h1>
-    <p>Premium EdTech platform for smart learning.</p>
-    <button class="btn" onclick="scrollToSection()">Explore</button>
+<div class="hero-left">
+
+<h1>Learn Smarter.<br>Build Your Future.</h1>
+
+<p>Premium Learning Platform for SSC, Banking, UPSC & Competitive Exams.</p>
+
+<a href="#study" class="btn">Start Learning</a>
+
 </div>
 
-<img src="cognix.png" style="width:350px; transform:rotate(-5deg);">
+<div class="hero-right glass">
+
+<img src="cognix.png" width="280">
+
+<h2>Cognix AI</h2>
+
+<p>AI Powered Learning Platform</p>
+
+</div>
 
 </section>
 
-<!-- FEATURES (SAAS STYLE) -->
-<section class="section">
+<!-- FEATURES -->
 
-<h2>🚀 Why Cognix?</h2>
+<section id="study">
+
+<div class="glass">
+
+<h2>🚀 Why Choose Cognix?</h2>
+
+<p>Your Premium Learning Platform</p>
+
+<br>
 
 <div class="grid">
 
-<div class="card">📘 Smart Learning System</div>
-<div class="card">📊 Analytics Based Growth</div>
-<div class="card">⚡ Fast Resources Access</div>
-<div class="card">🤖 AI Integration Ready</div>
-
+<div class="glass card">
+<h3>📚 Smart Notes</h3>
+<p>Premium PDF Notes for SSC, Banking & UPSC.</p>
 </div>
 
-</section>
-
-<!-- STUDY SECTION -->
-<section class="section" id="study">
-
-<h2>📚 Study Sections</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>English</h3>
-
-<div class="pdf-box">
-<a href="root-word.pdf" target="_blank">📄 Root Words</a>
+<div class="glass card">
+<h3>🤖 AI Learning</h3>
+<p>AI Powered Learning Experience.</p>
 </div>
 
-<div class="pdf-box">
-<a href="confuse-word-updated.pdf" target="_blank">📄 Confusing Words</a>
-</div>
-
-</div>
-
-<div class="card">
-<h3>General Studies</h3>
-
-<div class="pdf-box">
-<a href="gs-notes.pdf" target="_blank">📄 GS Notes</a>
-</div>
-
-</div>
-
-<div class="card">
-<h3>Mathematics</h3>
-
-<div class="pdf-box">
-<a href="math-notes.pdf" target="_blank">📄 Math Notes</a>
+<div class="glass card">
+<h3>📈 Progress Tracking</h3>
+<p>Track your daily study progress.</p>
 </div>
 
 </div>
@@ -189,58 +94,8 @@ footer {
 
 </section>
 
-<!-- AFFILIATE STORE -->
-<section class="section" id="store">
-
-<h2>🛒 Recommended Resources</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>📚 Best Books & Tools</h3>
-<p>Explore curated resources for learning.</p>
-<a href="https://linktr.ee/asutoshpadhi" target="_blank" class="btn">Visit Store</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-<footer id="contact">
-
-<div>
-<h3>Cognix</h3>
-<p>Premium EdTech Platform</p>
-</div>
-
-<div>
-<p>Home</p>
-<p>Study</p>
-<p>Store</p>
-</div>
-
-<div>
-<p>Resources</p>
-<p>PDF Notes</p>
-<p>Tools</p>
-</div>
-
-<div>
-<p>Connect</p>
-<a href="https://linkedin.com">LinkedIn</a><br>
-<a href="https://github.com">GitHub</a>
-</div>
-
-</footer>
-
-<script>
-function scrollToSection() {
-    document.getElementById("study").scrollIntoView({
-        behavior: "smooth"
-    });
-}
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
