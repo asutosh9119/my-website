@@ -380,3 +380,87 @@ width:260px;
 }
 
 }
+/* ================= MOTIVATION POPUP ================= */
+
+.popup-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.popup-card{
+
+width:500px;
+max-width:90%;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+animation:popup .5s ease;
+}
+
+.popup-logo{
+
+width:90px;
+
+margin-bottom:20px;
+}
+
+.popup-card h2{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+color:white;
+}
+
+.popup-card p{
+
+font-size:18px;
+
+color:#cfd8dc;
+
+line-height:1.8;
+
+margin-bottom:30px;
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+}
+}
