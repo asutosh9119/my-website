@@ -496,6 +496,57 @@ border-radius:20px;
 animation:logoFloat 2.5s ease-in-out infinite;
 filter:drop-shadow(0 0 30px rgba(56,189,248,.5));
 }
+/* ===========================
+   Premium Loading Bar
+=========================== */
+
+.boot-status{
+
+margin-top:30px;
+font-size:18px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:rgba(255,255,255,.55);
+font-weight:600;
+
+}
+
+.loading-bar{
+
+width:320px;
+height:8px;
+margin:25px auto;
+border-radius:50px;
+background:rgba(255,255,255,.08);
+overflow:hidden;
+position:relative;
+
+box-shadow:
+0 0 25px rgba(56,189,248,.08),
+inset 0 0 10px rgba(255,255,255,.05);
+
+}
+
+.loading-fill{
+
+width:0%;
+height:100%;
+border-radius:50px;
+
+background:linear-gradient(
+90deg,
+#38bdf8,
+#60a5fa,
+#818cf8
+);
+
+box-shadow:
+0 0 20px rgba(56,189,248,.8),
+0 0 40px rgba(99,102,241,.6);
+
+transition:width .15s linear;
+
+}
 
 #boot-progress{
 
