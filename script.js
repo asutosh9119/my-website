@@ -86,200 +86,84 @@ observer.observe(el);
 console.log("✅ Cognix Loaded Successfully");
 
 
-// ===============================
-// Motivation Popup
-// ===============================
-
-const popup=document.getElementById("motivation-popup");
-
-const getStarted=document.getElementById("get-started");
-
-const startLearning=document.getElementById("start-learning");
-
-const enterBtn=document.getElementById("enter-btn");
-
-const typingText=document.getElementById("typing-text");
-
-const message="Dreams don't change lives. Daily discipline does.";
-
-let typingRunning=false;
-
-function typeWriter(){
-
-if(typingRunning)return;
-
-typingRunning=true;
-
-typingText.innerHTML="";
-
-let i=0;
-
-function typing(){
-
-if(i<message.length){
-
-typingText.innerHTML+=message.charAt(i);
-
-i++;
-
-setTimeout(typing,40);
-
-}
-
-else{
-
-typingRunning=false;
-
-}
-
-}
-
-typing();
-
-}
-
-function openPopup(e){
-
-e.preventDefault();
-
-popup.style.display="flex";
-
-typeWriter();
-
-}
-
-if(getStarted){
-
-getStarted.addEventListener("click",openPopup);
-
-}
-
-if(startLearning){
-
-startLearning.addEventListener("click",openPopup);
-
-}
-
-if(enterBtn){
-
-enterBtn.addEventListener("click",function(){
-
-popup.style.display="none";
-
-document.getElementById("subjects").scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-});
-
-}
-
-
-// ESC key closes popup
-
-window.addEventListener("keydown",function(e){
-
-if(e.key==="Escape"){
-
-popup.style.display="none";
-
-}
-
-});
-
-
-// Click outside closes popup
-
-popup.addEventListener("click",function(e){
-
-if(e.target===popup){
-
-popup.style.display="none";
-
-}
-
-});
-
 // ===========================
 // COGNIX BOOT ANIMATION
 // ===========================
 
-const bootScreen = document.getElementById("boot-screen");
-const bootText = document.getElementById("boot-text");
-const bootSubtext = document.getElementById("boot-subtext");
-const bootProgress = document.getElementById("boot-progress");
+window.addEventListener("load", () => {
 
-const bootMessages = [
-"DISCIPLINE.",
-"CONSISTENCY.",
-"EXECUTION.",
-"SUCCESS."
-];
+    const bootScreen = document.getElementById("boot-screen");
+    const bootText = document.getElementById("boot-text");
+    const bootSubtext = document.getElementById("boot-subtext");
+    const bootProgress = document.getElementById("boot-progress");
 
-let progress = 0;
-let index = 0;
+    const messages = [
+        "DISCIPLINE.",
+        "CONSISTENCY.",
+        "EXECUTION.",
+        "SUCCESS."
+    ];
 
-// Loading Percentage
+    let progress = 0;
+    let messageIndex = 0;
 
-const loading = setInterval(()=>{
+    const loader = setInterval(() => {
 
-progress++;
+        progress++;
 
-bootProgress.innerHTML = progress + "%";
+        bootProgress.textContent = progress + "%";
 
-if(progress >= 100){
+        if (progress >= 100) {
 
-clearInterval(loading);
+            clearInterval(loader);
 
-showBootText();
+            showMessages();
 
-}
+        }
 
-},35);
+    }, 25);
 
+    function showMessages() {
 
-// Text Animation
+        function next() {
 
-function showBootText(){
+            if (messageIndex < messages.length) {
 
-function nextText(){
+                bootText.style.opacity = 0;
 
-if(index < bootMessages.length){
+                setTimeout(() => {
 
-bootText.style.opacity = "0";
+                    bootText.textContent = messages[messageIndex];
 
-setTimeout(()=>{
+                    bootText.style.opacity = 1;
 
-bootText.innerHTML = bootMessages[index];
+                    messageIndex++;
 
-bootText.style.opacity = "1";
+                    setTimeout(next, 900);
 
-index++;
+                }, 250);
 
-setTimeout(nextText,1000);
+            }
 
-},300);
+            else {
 
-}
+                bootSubtext.textContent =
+                "Preparing Your Future...";
 
-else{
+                setTimeout(() => {
 
-bootSubtext.innerHTML="Preparing Your Future...";
+                    bootScreen.style.opacity = "0";
 
-setTimeout(()=>{
+                    bootScreen.style.visibility = "hidden";
 
-bootScreen.style.opacity="0";
+                }, 1800);
 
-bootScreen.style.visibility="hidden";
+            }
 
-},1800);
+        }
 
-}
+        next();
 
-}
+    }
 
-nextText();
-
-}
+});
