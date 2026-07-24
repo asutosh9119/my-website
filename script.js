@@ -2,22 +2,41 @@
 // COGNIX V3 - Premium JavaScript
 // ===============================
 
+// -------------------------------
 // Smooth Scroll
+// -------------------------------
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
     anchor.addEventListener("click", function(e){
+
+        const href = this.getAttribute("href");
+
+        // Popup buttons ko smooth scroll se ignore karo
+        if(href === "#" || this.id === "get-started" || this.id === "start-learning"){
+            return;
+        }
+
         e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(href);
 
         if(target){
+
             target.scrollIntoView({
                 behavior:"smooth"
             });
+
         }
+
     });
+
 });
 
-// Navbar Shadow on Scroll
+
+// -------------------------------
+// Navbar Shadow
+// -------------------------------
 
 window.addEventListener("scroll",()=>{
 
@@ -39,7 +58,10 @@ nav.style.boxShadow="none";
 
 });
 
+
+// -------------------------------
 // Fade Animation
+// -------------------------------
 
 const observer=new IntersectionObserver(entries=>{
 
@@ -64,35 +86,49 @@ observer.observe(el);
 console.log("✅ Cognix Loaded Successfully");
 
 
-
-// ===========================
+// ===============================
 // Motivation Popup
-// ===========================
+// ===============================
 
-const popup = document.getElementById("motivation-popup");
-const getStarted = document.querySelector('a[href="#subjects"].btn');
-const enterBtn = document.getElementById("enter-btn");
-const typingText = document.getElementById("typing-text");
+const popup=document.getElementById("motivation-popup");
 
-const message = "Dreams don't change lives. Daily discipline does.";
+const getStarted=document.getElementById("get-started");
 
-let i = 0;
+const startLearning=document.getElementById("start-learning");
 
-function typeWriter() {
+const enterBtn=document.getElementById("enter-btn");
 
-typingText.innerHTML = "";
+const typingText=document.getElementById("typing-text");
 
-i = 0;
+const message="Dreams don't change lives. Daily discipline does.";
 
-function typing() {
+let typingRunning=false;
 
-if (i < message.length) {
+function typeWriter(){
 
-typingText.innerHTML += message.charAt(i);
+if(typingRunning)return;
+
+typingRunning=true;
+
+typingText.innerHTML="";
+
+let i=0;
+
+function typing(){
+
+if(i<message.length){
+
+typingText.innerHTML+=message.charAt(i);
 
 i++;
 
-setTimeout(typing, 40);
+setTimeout(typing,40);
+
+}
+
+else{
+
+typingRunning=false;
 
 }
 
@@ -102,24 +138,66 @@ typing();
 
 }
 
-getStarted.addEventListener("click", function(e){
+function openPopup(e){
 
 e.preventDefault();
 
-popup.style.display = "flex";
+popup.style.display="flex";
 
 typeWriter();
 
-});
+}
 
-enterBtn.addEventListener("click", function(){
+if(getStarted){
 
-popup.style.display = "none";
+getStarted.addEventListener("click",openPopup);
+
+}
+
+if(startLearning){
+
+startLearning.addEventListener("click",openPopup);
+
+}
+
+if(enterBtn){
+
+enterBtn.addEventListener("click",function(){
+
+popup.style.display="none";
 
 document.getElementById("subjects").scrollIntoView({
 
 behavior:"smooth"
 
 });
+
+});
+
+}
+
+
+// ESC key closes popup
+
+window.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+popup.style.display="none";
+
+}
+
+});
+
+
+// Click outside closes popup
+
+popup.addEventListener("click",function(e){
+
+if(e.target===popup){
+
+popup.style.display="none";
+
+}
 
 });
