@@ -112,6 +112,7 @@ window.addEventListener("load", () => {
         progress++;
 
         bootProgress.textContent = progress + "%";
+        document.getElementById("loading-fill").style.width = progress + "%";
 
         if (progress >= 100) {
 
