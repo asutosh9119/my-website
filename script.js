@@ -201,3 +201,67 @@ popup.style.display="none";
 }
 
 });
+
+// ===========================
+// COGNIX BOOT ANIMATION
+// ===========================
+
+const bootScreen = document.getElementById("boot-screen");
+const bootText = document.getElementById("boot-text");
+const bootSubtext = document.getElementById("boot-subtext");
+
+const bootMessages = [
+
+"DISCIPLINE.",
+
+"CONSISTENCY.",
+
+"EXECUTION.",
+
+"SUCCESS."
+
+];
+
+let index = 0;
+
+function showBootText(){
+
+bootText.style.opacity = 0;
+
+setTimeout(()=>{
+
+bootText.innerHTML = bootMessages[index];
+
+bootText.style.opacity = 1;
+
+index++;
+
+if(index < bootMessages.length){
+
+setTimeout(showBootText,1000);
+
+}
+
+else{
+
+bootSubtext.innerHTML="Preparing Your Future...";
+
+setTimeout(()=>{
+
+bootScreen.style.opacity="0";
+
+bootScreen.style.visibility="hidden";
+
+},1800);
+
+}
+
+},300);
+
+}
+
+window.addEventListener("load",()=>{
+
+setTimeout(showBootText,800);
+
+});
