@@ -209,36 +209,58 @@ popup.style.display="none";
 const bootScreen = document.getElementById("boot-screen");
 const bootText = document.getElementById("boot-text");
 const bootSubtext = document.getElementById("boot-subtext");
+const bootProgress = document.getElementById("boot-progress");
 
 const bootMessages = [
-
 "DISCIPLINE.",
-
 "CONSISTENCY.",
-
 "EXECUTION.",
-
 "SUCCESS."
-
 ];
 
+let progress = 0;
 let index = 0;
+
+// Loading Percentage
+
+const loading = setInterval(()=>{
+
+progress++;
+
+bootProgress.innerHTML = progress + "%";
+
+if(progress >= 100){
+
+clearInterval(loading);
+
+showBootText();
+
+}
+
+},35);
+
+
+// Text Animation
 
 function showBootText(){
 
-bootText.style.opacity = 0;
+function nextText(){
+
+if(index < bootMessages.length){
+
+bootText.style.opacity = "0";
 
 setTimeout(()=>{
 
 bootText.innerHTML = bootMessages[index];
 
-bootText.style.opacity = 1;
+bootText.style.opacity = "1";
 
 index++;
 
-if(index < bootMessages.length){
+setTimeout(nextText,1000);
 
-setTimeout(showBootText,1000);
+},300);
 
 }
 
@@ -256,12 +278,8 @@ bootScreen.style.visibility="hidden";
 
 }
 
-},300);
-
 }
 
-window.addEventListener("load",()=>{
+nextText();
 
-setTimeout(showBootText,800);
-
-});
+}
